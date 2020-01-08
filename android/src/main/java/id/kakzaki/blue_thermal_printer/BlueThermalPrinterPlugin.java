@@ -235,7 +235,7 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
             case "printImage":
                 if (arguments.containsKey("pathImage")) {
                     String pathImage = (String) arguments.get("pathImage");
-                    result.success(printImage(result, pathImage));
+                    result.success(printImage(pathImage));
                 } else {
                     result.error("invalid_argument", "argument 'pathImage' not found", null);
                 }
@@ -537,9 +537,9 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
         }
     }
 
-    private String printImage(Result result, String pathImage) {
+    private String printImage( String pathImage) {
         if (THREAD == null) {
-            result.error("write_error", "not connected", null);
+          //  result.error("write_error", "not connected", null);
             return "write_error not connected";
         }
         try {
@@ -552,11 +552,11 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
                 Log.e("Print Photo error", "the file isn't exists");
                 return "Print Photo error the file isn't exists";
             }
-            result.success(true);
+         //   result.success(true);
 
         } catch (Exception ex) {
             Log.e(TAG, ex.getMessage(), ex);
-            result.error("write_error", ex.getMessage(), exceptionToString(ex));
+         //   result.error("write_error", ex.getMessage(), exceptionToString(ex));
             return "write_error";
 
         }
