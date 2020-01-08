@@ -13,8 +13,8 @@ class TestPrint {
     // 0- ESC_ALIGN_LEFT
     // 1- ESC_ALIGN_CENTER
     // 2- ESC_ALIGN_RIGHT
-    bluetooth.isConnected.then((isConnected) {
-      if (isConnected) {
+ //   bluetooth.isConnected.then((isConnected) {
+  //    if (isConnected) {
         bluetooth.printNewLine();
         bluetooth.printCustom("HEADER",3,1);
         bluetooth.printNewLine();
@@ -35,7 +35,7 @@ class TestPrint {
         bluetooth.printNewLine();
         bluetooth.printNewLine();
         bluetooth.paperCut();
-      }
-    });
+    //  }
+  //  });
   }
 }
